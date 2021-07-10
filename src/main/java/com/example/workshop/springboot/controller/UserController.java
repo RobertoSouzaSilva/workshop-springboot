@@ -36,13 +36,13 @@ public class UserController {
     if (name.isEmpty())
        users = userService.getUsers();
     else
-       users = userService.getUsersbyName(name);
+       users = userService.getUsersbyName(name) ;
     return ResponseEntity.ok(users);
   }
 
   @GetMapping("/{id}")
   public ResponseEntity<UserModel> getPerson(@PathVariable Integer id) {
-    UserModel user = userService.getUser(id);
+    UserModel user = userService.getUser(id) ;
     return ResponseEntity.ok(user);
   }
 
